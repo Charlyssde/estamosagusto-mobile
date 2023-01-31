@@ -67,7 +67,7 @@ fun LoginScreen(
         )
 
         Box(
-            modifier = Modifier.fillMaxSize().padding(bottom = 10   .dp),
+            modifier = Modifier.fillMaxSize().padding(bottom = 75.dp),
             contentAlignment = Alignment.BottomCenter
         ){
             ConstraintLayout {
