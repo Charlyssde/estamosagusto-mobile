@@ -13,6 +13,7 @@ import androidx.compose.ui.focus.FocusDirection
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalFocusManager
 import androidx.compose.ui.text.input.ImeAction
+import androidx.compose.ui.text.input.KeyboardCapitalization
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
@@ -81,6 +82,7 @@ fun RegisterScreen(
                         textFieldValue = nameValue,
                         textLabel = "Nombre",
                         keyboardType = KeyboardType.Text,
+                        capitalization = KeyboardCapitalization.Words,
                         keyboardActions = KeyboardActions(
                             onNext = {
                                 focusManager.moveFocus(FocusDirection.Down)
@@ -91,6 +93,7 @@ fun RegisterScreen(
                     TransparentTextField(
                         textFieldValue = lastnameValue,
                         textLabel = "Primer apellido",
+                        capitalization = KeyboardCapitalization.Words,
                         keyboardType = KeyboardType.Text,
                         keyboardActions = KeyboardActions(
                             onNext = {
@@ -102,6 +105,7 @@ fun RegisterScreen(
                     TransparentTextField(
                         textFieldValue = secondLastnameValue,
                         textLabel = "Segundo Apellido",
+                        capitalization = KeyboardCapitalization.Words,
                         keyboardType = KeyboardType.Text,
                         keyboardActions = KeyboardActions(
                             onNext = {
@@ -188,6 +192,7 @@ fun RegisterScreen(
                         textFieldValue = occupationValue,
                         textLabel = "Ocupación",
                         keyboardType = KeyboardType.Text,
+                        capitalization = KeyboardCapitalization.Words,
                         keyboardActions = KeyboardActions(
                             onNext = {
                                 focusManager.moveFocus(FocusDirection.Down)
@@ -230,7 +235,8 @@ fun RegisterScreen(
                     TransparentTextField(
                         textFieldValue = hobbyValue,
                         textLabel = "Pasatiempos",
-                        keyboardType = KeyboardType.Email,
+                        keyboardType = KeyboardType.Text,
+                        capitalization = KeyboardCapitalization.Words,
                         keyboardActions = KeyboardActions(
                             onDone = { focusManager.clearFocus() }
                         ),
