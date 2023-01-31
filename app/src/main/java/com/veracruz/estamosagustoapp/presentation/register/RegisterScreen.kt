@@ -29,7 +29,7 @@ fun RegisterScreen(
     val nameValue = remember { mutableStateOf("") }
     val lastnameValue = remember { mutableStateOf("") }
     val secondLastnameValue = remember { mutableStateOf("") }
-    val dateOfBirthValue = remember { mutableStateOf("18/03/1998") }
+    val dateOfBirthValue = remember { mutableStateOf("") }
     val phoneValue = remember { mutableStateOf("") }
     val mobileValue = remember { mutableStateOf("") }
     val genderValue = remember { mutableStateOf("") }
@@ -114,7 +114,8 @@ fun RegisterScreen(
                     imeAction = ImeAction.Next
                 )*/
                 DateInput(
-                    textFieldValue = dateOfBirthValue
+                    textFieldValue = dateOfBirthValue,
+                    imeAction = ImeAction.Next
                 )
 
                 TransparentTextField(

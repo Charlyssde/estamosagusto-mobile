@@ -1,7 +1,9 @@
 package com.veracruz.estamosagustoapp.data
 
 import android.util.Log
+import android.widget.Toast
 import androidx.annotation.StringRes
+import androidx.compose.ui.platform.LocalContext
 import com.veracruz.estamosagustoapp.R
 import com.veracruz.estamosagustoapp.domain.model.UserModel
 import com.veracruz.estamosagustoapp.data.Result
@@ -14,7 +16,6 @@ import javax.inject.Inject
 class UserServiceImpl @Inject constructor(private val userApi: UserApi) : UserRepository {
 
     override suspend fun saveUser(userModel: UserModel) : Result<Unit> {
-        Log.e("GETSIN->", "ENTRA AQUÍ")
         Log.e("GETSIN->", userModel.toString())
         val response = try{
             userApi.saveUser(userModel)
