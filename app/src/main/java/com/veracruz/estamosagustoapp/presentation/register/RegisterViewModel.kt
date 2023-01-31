@@ -32,7 +32,7 @@ class RegisterViewModel @Inject constructor(
                     name = name,
                     firstLastname = lastname,
                     secondLastname = secondLastname,
-                    birthDate = dateOfBirth,
+                    birthDate = formatDate(dateOfBirth),
                     phone = phone,
                     mobile = mobile,
                     gender = gender,
@@ -47,6 +47,14 @@ class RegisterViewModel @Inject constructor(
                 )
             )
         }
+    }
+
+    private fun formatDate(date : String) : String{
+        var response = ""
+
+        response += date.substring(0,2) + "/" + date.substring(2, 4) + "/" + date.substring(date.length - 4, date.length);
+
+        return response
     }
 
 }
