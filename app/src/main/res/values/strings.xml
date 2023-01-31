@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">EstamosAgustoApp</string>
+    <string name="input_field">Por favor complete todos los campos</string>
+    <string name="save_success_message">Se ha guardado con éxito el registro</string>
+    <string name="error_message">Ha ocurrido un error</string>
+</resources>
