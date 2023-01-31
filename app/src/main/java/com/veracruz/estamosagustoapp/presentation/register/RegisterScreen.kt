@@ -232,7 +232,7 @@ fun RegisterScreen(
                         textLabel = "Pasatiempos",
                         keyboardType = KeyboardType.Email,
                         keyboardActions = KeyboardActions(
-                            onNext = { focusManager.moveFocus(FocusDirection.Down) }
+                            onDone = { focusManager.clearFocus() }
                         ),
                         imeAction = ImeAction.Done
                     )
