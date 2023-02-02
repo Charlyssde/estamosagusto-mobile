@@ -1,6 +1,9 @@
 package com.veracruz.estamosagustoapp
 
+import android.os.Build
 import android.os.Bundle
+import android.view.WindowInsetsController
+import android.view.WindowManager
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.animation.ExperimentalAnimationApi
@@ -11,10 +14,12 @@ import androidx.compose.material.Text
 import androidx.compose.material.TextField
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.SideEffect
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.core.view.WindowCompat
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavHostController
@@ -23,6 +28,7 @@ import androidx.navigation.compose.rememberNavController
 import com.google.accompanist.navigation.animation.AnimatedNavHost
 import com.google.accompanist.navigation.animation.composable
 import com.google.accompanist.navigation.animation.rememberAnimatedNavController
+import com.google.accompanist.systemuicontroller.rememberSystemUiController
 import com.veracruz.estamosagustoapp.navigation.Destinations
 import com.veracruz.estamosagustoapp.navigation.NavigationHost
 import com.veracruz.estamosagustoapp.presentation.home.HomeScreen
@@ -40,6 +46,11 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             BoxWithConstraints() {
+                val systemUiController = rememberSystemUiController()
+                SideEffect {
+                    //systemUiController.setStatusBarColor(color = Color.Transparent, darkIcons = true)
+                    systemUiController.setNavigationBarColor(color = Color.Transparent, darkIcons = true)
+                }
                 EstamosAgustoAppTheme {
                     NavigationHost()
                 }

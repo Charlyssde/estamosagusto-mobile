@@ -7,7 +7,7 @@ import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.POST
 
-interface UserApi {
+interface Api {
 
     @POST("/register")
     suspend fun saveUser( @Body user: UserModel)

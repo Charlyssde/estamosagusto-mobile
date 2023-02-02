@@ -57,13 +57,11 @@ fun LoginScreen(
     Box(
         modifier = Modifier
             .fillMaxSize()
-            .background(MaterialTheme.colors.background)
+            .background(Color.White)
     ){
         Image(
             painter = painterResource(id = R.drawable.logo),
             contentDescription = "Login Image",
-            contentScale = ContentScale.Inside,
-            alignment = Alignment.Center
         )
 
         Box(
@@ -96,14 +94,15 @@ fun LoginScreen(
                         Text(
                             text = "Bienvenido",
                             style = MaterialTheme.typography.h4.copy(
-                                fontWeight = FontWeight.Medium
+                                fontWeight = FontWeight.ExtraBold,
+                                color = MaterialTheme.colors.primary
                             )
                         )
 
                         Text(
                             text = "Inicia sesión para continuar",
                             style = MaterialTheme.typography.h5.copy(
-                                color = MaterialTheme.colors.primary
+                                fontWeight = FontWeight.Medium
                             )
                         )
 

@@ -4,6 +4,7 @@ import com.veracruz.estamosagustoapp.domain.model.UserModel
 import com.veracruz.estamosagustoapp.domain.repository.UserRepository
 import javax.inject.Inject
 import com.veracruz.estamosagustoapp.data.Result
+import com.veracruz.estamosagustoapp.domain.model.CityModel
 
 class InsertUserUseCase @Inject constructor(
     private val repository: UserRepository
@@ -13,8 +14,8 @@ class InsertUserUseCase @Inject constructor(
         return repository.saveUser(userModel = userModel);
     }
 
-    suspend fun getAllCities () {
-        repository.getCities()
+    suspend fun getAllCities () : List<CityModel> {
+        return repository.getCities()
     }
 
 }
