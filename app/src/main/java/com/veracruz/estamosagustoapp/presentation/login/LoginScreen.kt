@@ -48,7 +48,6 @@ fun LoginScreen(
     onDismissDialog : () -> Unit
 
 ) {
-
     val usernameValue = rememberSaveable{ mutableStateOf("") }
     val passwordValue = rememberSaveable{ mutableStateOf("") }
     var passwordVisibility by remember { mutableStateOf(false) }
@@ -63,7 +62,6 @@ fun LoginScreen(
             painter = painterResource(id = R.drawable.logo),
             contentDescription = "Login Image",
         )
-
         Box(
             modifier = Modifier.fillMaxSize().padding(bottom = 75.dp),
             contentAlignment = Alignment.BottomCenter
@@ -75,7 +73,7 @@ fun LoginScreen(
                 Surface(
                     modifier = Modifier
                         .fillMaxWidth()
-                        .height(400.dp)
+                        .height(450.dp)
                         .constrainAs(surface) {
                             bottom.linkTo(parent.bottom)
                         },
@@ -89,7 +87,7 @@ fun LoginScreen(
                         modifier = Modifier
                             .fillMaxWidth()
                             .padding(16.dp),
-                        verticalArrangement = Arrangement.SpaceEvenly
+                        verticalArrangement = Arrangement.spacedBy(15.dp)
                     ){
                         Text(
                             text = "Bienvenido",

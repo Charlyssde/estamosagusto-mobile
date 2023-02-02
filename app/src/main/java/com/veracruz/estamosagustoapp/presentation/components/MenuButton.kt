@@ -1,9 +1,6 @@
 package com.veracruz.estamosagustoapp.presentation.components
 
-import android.graphics.drawable.Drawable
-import android.graphics.drawable.Icon
-import android.media.Image
-import androidx.compose.foundation.Image
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
@@ -12,55 +9,47 @@ import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.text.TextStyle
-import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.veracruz.estamosagustoapp.R
 
 
+@OptIn(ExperimentalMaterialApi::class)
 @Composable
 fun MenuButton(
     text: String,
-    icon: Int,
+    icon: ImageVector,
     description: String,
     onClick: () -> Unit
 ) {
-
-    Box(
+    Card (
         modifier = Modifier
-            .fillMaxWidth()
-            .background(Color.Transparent),
-        contentAlignment = Alignment.Center
-    ) {
+            .width(300.dp)
+            .height(250.dp)
+            .padding(10.dp),
+        elevation = 5.dp,
+        border = BorderStroke(2.dp, MaterialTheme.colors.onPrimary),
+        onClick = {onClick()},
+        shape = RoundedCornerShape(15),
+        contentColor = MaterialTheme.colors.onPrimary
+        ) {
         Column(
+            modifier = Modifier.padding(10.dp),
+            verticalArrangement = Arrangement.SpaceEvenly,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            Surface(
-                shape = CircleShape,
-                modifier = Modifier.background(Color.White)
-            ) {
-                Button(
-                    colors = ButtonDefaults.buttonColors(backgroundColor = Color.LightGray),
-                    onClick = { onClick() }
-                ) {
-                    Image(
-                        painter = painterResource(id = icon),
-                        contentDescription = description,
-                        modifier = Modifier
-                            .height(75.dp)
-                            .width(75.dp),
-                    )
-                }
-            }
+            Icon(
+                modifier = Modifier.size(100.dp),
+                imageVector = icon,
+                contentDescription = description,
+            )
             Text(
                 text = text,
                 style = TextStyle(
-                    color = Color.Gray,
                     fontWeight = FontWeight.Bold,
                     fontSize = 18.sp,
                 )

@@ -5,6 +5,11 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.material.Scaffold
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Details
+import androidx.compose.material.icons.filled.Gesture
+import androidx.compose.material.icons.filled.Language
+import androidx.compose.material.icons.filled.People
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -36,39 +41,31 @@ fun HomeScreen(
         ) {
             LazyVerticalGrid(
                 columns = GridCells.Fixed(2),
-                verticalArrangement = Arrangement.spacedBy(15.dp),
-                horizontalArrangement = Arrangement.spacedBy(10.dp),
-                modifier = Modifier.padding(top = 10.dp)
+                verticalArrangement = Arrangement.spacedBy(10.dp),
+                horizontalArrangement = Arrangement.Center,
+                modifier = Modifier.padding(15.dp).fillMaxSize()
             ) {
                 item {
                     MenuButton(
                         text = "Registrar un amigo",
-                        icon = R.drawable.icon_friend_foreground,
-                        description = "registro",
+                        icon = Icons.Default.People,
+                        description = "Registro",
                         onClick = { navController.navigate(Destinations.Registration.route) }
                     )
                 }
                 item {
                     MenuButton(
-                        text = "Registrar un amigo",
-                        icon = R.drawable.icon_friend_foreground,
-                        description = "registro",
+                        text = "Hacer otra cosa",
+                        icon = Icons.Default.Language,
+                        description = "Otra cosa",
                         onClick = { navController.navigate(Destinations.Registration.route) }
                     )
                 }
                 item {
                     MenuButton(
-                        text = "Registrar un amigo",
-                        icon = R.drawable.icon_friend_foreground,
-                        description = "registro",
-                        onClick = { navController.navigate(Destinations.Registration.route) }
-                    )
-                }
-                item {
-                    MenuButton(
-                        text = "Registrar un amigo",
-                        icon = R.drawable.icon_friend_foreground,
-                        description = "registro",
+                        text = "Algo extra",
+                        icon = Icons.Default.Gesture,
+                        description = "Algo extra",
                         onClick = { navController.navigate(Destinations.Registration.route) }
                     )
                 }
