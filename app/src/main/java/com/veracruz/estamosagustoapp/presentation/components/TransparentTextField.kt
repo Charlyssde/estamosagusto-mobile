@@ -3,6 +3,7 @@ package com.veracruz.estamosagustoapp.presentation.components
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
+import androidx.compose.material.OutlinedTextField
 import androidx.compose.material.Text
 import androidx.compose.material.TextField
 import androidx.compose.material.TextFieldDefaults
@@ -28,7 +29,7 @@ fun TransparentTextField(
     trailingIcon: @Composable() (() -> Unit)? = null,
     visualTransformation: VisualTransformation = VisualTransformation.None
 ) {
-    TextField(
+    OutlinedTextField(
         modifier = modifier.fillMaxWidth(),
         value = textFieldValue.value,
         onValueChange = { textFieldValue.value = it },

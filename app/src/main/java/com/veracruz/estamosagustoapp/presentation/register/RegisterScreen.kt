@@ -6,10 +6,11 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.verticalScroll
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Scaffold
-import androidx.compose.material.Text
-import androidx.compose.material.TopAppBar
+import androidx.compose.material.*
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Email
+import androidx.compose.material.icons.filled.MobileFriendly
+import androidx.compose.material.icons.filled.Phone
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -138,7 +139,13 @@ fun RegisterScreen(
                                     focusManager.moveFocus(FocusDirection.Down)
                                 }
                             ),
-                            imeAction = ImeAction.Next
+                            imeAction = ImeAction.Next,
+                            trailingIcon = {
+                                Icon(
+                                    imageVector = Icons.Default.Phone,
+                                    contentDescription = "phone"
+                                )
+                            }
                         )
                         TransparentTextField(
                             textFieldValue = mobileValue,
@@ -149,7 +156,13 @@ fun RegisterScreen(
                                     focusManager.moveFocus(FocusDirection.Down)
                                 }
                             ),
-                            imeAction = ImeAction.Next
+                            imeAction = ImeAction.Next,
+                            trailingIcon = {
+                                Icon(
+                                    imageVector = Icons.Default.MobileFriendly,
+                                    contentDescription = "mobile"
+                                )
+                            }
                         )
                         TransparentTextField(
                             textFieldValue = emailValue,
@@ -158,7 +171,13 @@ fun RegisterScreen(
                             keyboardActions = KeyboardActions(
                                 onNext = { focusManager.moveFocus(FocusDirection.Down) }
                             ),
-                            imeAction = ImeAction.Next
+                            imeAction = ImeAction.Next,
+                            trailingIcon = {
+                                Icon(
+                                    imageVector = Icons.Default.Email,
+                                    contentDescription = "email"
+                                )
+                            }
                         )
 
                         DividerText(text = "Información adicional")

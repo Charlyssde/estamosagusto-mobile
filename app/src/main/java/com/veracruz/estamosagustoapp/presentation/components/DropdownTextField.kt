@@ -26,7 +26,7 @@ fun DropdownTextField(
         },
         modifier = Modifier.fillMaxWidth()
     ) {
-        TextField(
+        OutlinedTextField(
             value = value.value,
             onValueChange = {},
             readOnly = true,

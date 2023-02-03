@@ -9,6 +9,8 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.*
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.CalendarToday
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.ExperimentalComposeUiApi
@@ -59,10 +61,16 @@ fun DateTextField(
     onValueChange: (TextFieldValue) -> Unit,
     imeAction: ImeAction
 ) {
-    TextField(
+    OutlinedTextField(
         value = value.value,
         label = {
-          Text(text = "dd/mm/yyyy")  
+          Text(text = "Fecha de nacimiento")
+        },
+        trailingIcon = {
+            Icon(
+                imageVector = Icons.Default.CalendarToday,
+                contentDescription = "Icon"
+            )
         },
         visualTransformation = DateTransformation(),
         keyboardOptions = KeyboardOptions(
