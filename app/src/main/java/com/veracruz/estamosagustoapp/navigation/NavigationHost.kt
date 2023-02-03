@@ -18,7 +18,7 @@ import com.veracruz.estamosagustoapp.presentation.register.RegisterViewModel
 fun NavigationHost() {
     val navController = rememberNavController()
 
-    NavHost(navController = navController, startDestination = Destinations.Home.route) {
+    NavHost(navController = navController, startDestination = Destinations.Login.route) {
         composable(Destinations.Login.route) {
             val context = LocalContext.current
             val viewModel : LoginViewModel = hiltViewModel()
