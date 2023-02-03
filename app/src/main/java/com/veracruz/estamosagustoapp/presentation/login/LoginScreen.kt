@@ -72,18 +72,17 @@ fun LoginScreen(
                 val (surface, fab) = createRefs()
 
                 Surface(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .height(450.dp)
-                        .border(1.dp, Color.DarkGray)
-                        .constrainAs(surface) {
-                            bottom.linkTo(parent.bottom)
-                        },
-                    color = Color.White,
                     shape = RoundedCornerShape(
                         topStartPercent = 8,
                         topEndPercent = 8
-                    )
+                    ),
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .height(450.dp)
+                        .constrainAs(surface) {
+                            bottom.linkTo(parent.bottom)
+                        },
+                    color = Color.White
                 ){
                     Column(
                         modifier = Modifier
