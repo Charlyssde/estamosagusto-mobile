@@ -6,16 +6,12 @@ import javax.inject.Inject
 import com.veracruz.estamosagustoapp.data.Result
 import com.veracruz.estamosagustoapp.domain.model.CityModel
 
-class InsertUserUseCase @Inject constructor(
+class UserUseCase @Inject constructor(
     private val repository: UserRepository
 ) {
 
     suspend operator fun invoke ( userModel : UserModel ) : Result<Unit>{
         return repository.saveUser(userModel = userModel);
-    }
-
-    suspend fun getAllCities () : List<CityModel> {
-        return repository.getCities()
     }
 
 }

@@ -1,5 +1,6 @@
 package com.veracruz.estamosagustoapp.presentation.login
 
+import android.content.Context
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -12,11 +13,7 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowForward
 import androidx.compose.material.icons.filled.Visibility
 import androidx.compose.material.icons.filled.VisibilityOff
-import androidx.compose.runtime.Composable
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.setValue
+import androidx.compose.runtime.*
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -24,6 +21,7 @@ import androidx.compose.ui.focus.FocusDirection
 import androidx.compose.ui.focus.FocusRequester.Companion.createRefs
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalFocusManager
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.SpanStyle
@@ -38,21 +36,24 @@ import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.dp
 import androidx.constraintlayout.compose.ConstraintLayout
 import com.veracruz.estamosagustoapp.R
+import com.veracruz.estamosagustoapp.datastore.StoreData
 import com.veracruz.estamosagustoapp.presentation.components.EventDialog
 import com.veracruz.estamosagustoapp.presentation.components.RoundedButton
 import com.veracruz.estamosagustoapp.presentation.components.TransparentTextField
+import kotlinx.coroutines.CoroutineScope
 
 @Composable
 fun LoginScreen(
     state : LoginState,
-    onLogin : (String, String) -> Unit,
+    onLogin : (String, String, Context) -> Unit,
     onDismissDialog : () -> Unit
-
 ) {
     val usernameValue = rememberSaveable{ mutableStateOf("") }
     val passwordValue = rememberSaveable{ mutableStateOf("") }
     var passwordVisibility by remember { mutableStateOf(false) }
     val focusManager = LocalFocusManager.current
+
+    val context = LocalContext.current
 
     Box(
         modifier = Modifier
@@ -168,7 +169,7 @@ fun LoginScreen(
                         },
                     backgroundColor = MaterialTheme.colors.primary,
                     onClick = {
-                        onLogin(usernameValue.value, passwordValue.value);
+                        onLogin(usernameValue.value, passwordValue.value, context);
                     }
                 ) {
                     Icon(
@@ -180,12 +181,12 @@ fun LoginScreen(
                 }
             }
         }
-        if(state.errorMessage != null){
+        /*if(state.errorMessage != null){
             EventDialog(
                 errorMessage = state.errorMessage,
                 onDismiss = onDismissDialog
             )
-        }
+        }*/
     }
 }
 

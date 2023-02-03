@@ -6,5 +6,4 @@ import com.veracruz.estamosagustoapp.domain.model.CityModel
 
 interface UserRepository {
     suspend fun saveUser(userModel: UserModel) : Result<Unit>
-    suspend fun getCities() : List<CityModel>
 }

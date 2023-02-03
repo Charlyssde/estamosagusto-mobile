@@ -35,7 +35,7 @@ fun NavigationHost() {
                 LoginScreen(
                     state = viewModel.state.value,
                     onLogin = viewModel::login,
-                    onDismissDialog = viewModel::hideErrorDialog
+                    onDismissDialog = viewModel::hideErrorDialog,
                 )
             }
         }

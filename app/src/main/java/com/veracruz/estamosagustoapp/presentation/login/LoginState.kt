@@ -6,5 +6,4 @@ data class LoginState(
     val username : String = "",
     val password : String = "",
     val success : Boolean = false,
-    @StringRes val errorMessage : Int? = null
 )

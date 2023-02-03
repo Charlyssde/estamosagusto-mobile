@@ -1,6 +1,5 @@
 package com.veracruz.estamosagustoapp.presentation.register
 
-import android.provider.ContactsContract.CommonDataKinds.Email
 import android.util.Log
 import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.mutableStateOf
@@ -8,20 +7,22 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.veracruz.estamosagustoapp.domain.model.CityModel
 import com.veracruz.estamosagustoapp.domain.model.UserModel
-import com.veracruz.estamosagustoapp.domain.usecases.InsertUserUseCase
+import com.veracruz.estamosagustoapp.domain.usecases.CityUseCase
+import com.veracruz.estamosagustoapp.domain.usecases.UserUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
 class RegisterViewModel @Inject constructor(
-    private val insertUserUseCase: InsertUserUseCase
+    private val userUseCase: UserUseCase,
+    private val cityUseCase: CityUseCase
 ) : ViewModel() {
 
     val state : MutableState<UserModel> = mutableStateOf(UserModel())
 
     suspend fun getAllCities() : List<CityModel> {
-        return insertUserUseCase.getAllCities()?: emptyList();
+        return cityUseCase.getAllCities()?: emptyList();
     }
 
     fun register (name : String, firstLastname : String, secondLastname : String, birthDate : String, phone : String,
@@ -34,7 +35,7 @@ class RegisterViewModel @Inject constructor(
 
         Log.e("GETSIN->", state.value.toString())
         viewModelScope.launch {
-            insertUserUseCase.invoke(
+            userUseCase.invoke(
                 userModel = UserModel(
                     name = state.value.name,
                     firstLastname = state.value.firstLastname,
