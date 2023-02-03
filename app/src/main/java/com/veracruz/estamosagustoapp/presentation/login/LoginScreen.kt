@@ -2,6 +2,7 @@ package com.veracruz.estamosagustoapp.presentation.login
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.ClickableText
@@ -74,6 +75,7 @@ fun LoginScreen(
                     modifier = Modifier
                         .fillMaxWidth()
                         .height(450.dp)
+                        .border(1.dp, Color.DarkGray)
                         .constrainAs(surface) {
                             bottom.linkTo(parent.bottom)
                         },

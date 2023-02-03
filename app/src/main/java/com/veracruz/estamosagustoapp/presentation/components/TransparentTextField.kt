@@ -45,7 +45,8 @@ fun TransparentTextField(
         keyboardActions = keyboardActions,
         visualTransformation = visualTransformation,
         colors = TextFieldDefaults.textFieldColors(
-            backgroundColor = Color.Transparent
+            backgroundColor = Color.Transparent,
+            textColor = Color.Black
         )
     )
 }

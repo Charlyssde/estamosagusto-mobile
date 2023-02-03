@@ -39,7 +39,8 @@ fun DropdownCities(
                 )
             },
             colors = TextFieldDefaults.textFieldColors(
-                backgroundColor = Color.Transparent
+                backgroundColor = Color.Transparent,
+                textColor = Color.Black
             ),
             modifier = Modifier.fillMaxWidth(),
 
