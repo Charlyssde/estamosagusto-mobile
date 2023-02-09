@@ -55,7 +55,7 @@ fun RegisterScreen(
     val cities = remember {  mutableStateOf(emptyList<CityModel>()) }
     LaunchedEffect(key1 = Unit){
         cities.value = getCities.invoke()
-        Log.e("GETSIN->", cities.value.toString())
+        Log.e("Result->", cities.value.toString())
     }
     val cityValue = remember { mutableStateOf(CityModel()) }
     val emailValue = remember { mutableStateOf("") }

@@ -13,8 +13,8 @@ class CityServiceImpl @Inject constructor(private val api : Api) : CityRepositor
             response.body()?.forEach { cityModel: CityModel -> Log.e("Model->", cityModel.toString()) }
             return response.body() ?: emptyList()
         }catch (e : java.lang.Exception){
-            Log.e("GETSIN->", e.toString())
-            Log.e("GETSIN->", e.printStackTrace().toString())
+            Log.e("Exception->", e.toString())
+            Log.e("Exception->", e.printStackTrace().toString())
         }
         return emptyList()
     }

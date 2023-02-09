@@ -16,6 +16,10 @@ class LoginServiceImpl @Inject constructor(private val api : Api) : LoginReposit
             return response;
         } catch (e : Exception){
             Log.e("Exception->", e.toString());
+            e.message?.let{
+                Log.e("Exception->", it);
+
+            }
         }
         return TokenModel()
     }
