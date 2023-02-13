@@ -8,6 +8,7 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.veracruz.estamosagustoapp.presentation.camerascan.MLKitTextRecognition
 import com.veracruz.estamosagustoapp.presentation.home.HomeScreen
 import com.veracruz.estamosagustoapp.presentation.login.LoginScreen
 import com.veracruz.estamosagustoapp.presentation.login.LoginViewModel
@@ -53,6 +54,11 @@ fun NavigationHost() {
             Destinations.Home.route
         ){
             HomeScreen(text = "¿Qué deseas hacer?", navController = navController)
+        }
+        composable(
+            Destinations.CameraUI.route
+        ){
+            MLKitTextRecognition()
         }
 
     }

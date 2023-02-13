@@ -66,7 +66,7 @@ fun HomeScreen(
                         text = "Algo extra",
                         icon = Icons.Default.Gesture,
                         description = "Algo extra",
-                        onClick = { navController.navigate(Destinations.Registration.route) }
+                        onClick = { navController.navigate(Destinations.CameraUI.route) }
                     )
                 }
             }

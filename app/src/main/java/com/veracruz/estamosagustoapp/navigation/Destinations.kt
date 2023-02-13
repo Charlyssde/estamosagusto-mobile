@@ -6,5 +6,6 @@ sealed class Destinations(
     object Login : Destinations("login")
     object Home : Destinations("home")
     object Registration : Destinations("register")
+    object CameraUI : Destinations("camera")
 }
 
